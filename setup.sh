@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cd /root && set -a && . /root/version.env
 npm install appium@$APPIUM_VERSION
 mkdir -p /root/appium/appium/
 mv /root/node_modules/appium /root/appium/appium/$APPIUM_VERSION
