@@ -7,7 +7,7 @@ Subject: [PATCH 1/1] fix BufferOverflow by limiting output of dumpsys
  node_modules/appium-adb/lib/adb.js | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/lib/adb.js b/lib/adb.js
+diff --git a/node_modules/appium-adb/lib/adb.js b/node_modules/appium-adb/lib/adb.js
 index 5604125..3c25338 100644
 --- a/node_modules/appium-adb/lib/adb.js
 +++ b/node_modules/appium-adb/lib/adb.js
