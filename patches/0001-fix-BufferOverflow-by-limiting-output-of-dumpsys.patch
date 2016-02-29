@@ -1,16 +1,5 @@
-From 8b315d76b2d3dcfb2bd457272adae37e18eb5e33 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Andreas=20L=C3=BCdeke?= <aluedeke@testobject.com>
-Date: Mon, 29 Feb 2016 13:00:31 +0100
-Subject: [PATCH 1/1] fix BufferOverflow by limiting output of dumpsys
-
----
- node_modules/appium-adb/lib/adb.js | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/node_modules/appium-adb/lib/adb.js b/node_modules/appium-adb/lib/adb.js
-index 5604125..3c25338 100644
---- a/node_modules/appium-adb/lib/adb.js
-+++ b/node_modules/appium-adb/lib/adb.js
+--- node_modules/appium-adb/lib/adb.js
++++ node_modules/appium-adb/lib/adb.js
 @@ -1237,7 +1237,7 @@ ADB.prototype.androidCoverage = function (instrumentClass, waitPkg, waitActivity
 
  ADB.prototype.getFocusedPackageAndActivity = function (cb) {
@@ -29,5 +18,3 @@ index 5604125..3c25338 100644
    this.shell(cmd, function (err, stdout) {
      if (err) return cb(err);
      if (process.env.APPIUM_LOG_DUMPSYS) {
---
-2.6.0
