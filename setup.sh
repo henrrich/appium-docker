@@ -2,6 +2,12 @@
 
 echo "preparing appium version $APPIUM_VERSION"
 
+if [[ $APPIUM_VERSION == 1.5.* ]]; then
+  echo "Installing java dependency"
+  apt-get update
+  apt-get -y install default-jdk
+fi
+
 npm install appium@$APPIUM_VERSION
 mkdir -p /root/appium/appium/
 mv /root/node_modules/appium /root/appium/appium/$APPIUM_VERSION
