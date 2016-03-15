@@ -1,5 +1,5 @@
---- lib/devices/android/chrome.js	2015-11-20 19:55:03.000000000 +0100
-+++ lib/devices/android/chrome.js	2016-02-10 20:18:31.000000000 +0100
+--- lib/devices/android/chrome.js
++++ lib/devices/android/chrome.js
 @@ -106,7 +107,8 @@
  ChromeAndroid.prototype.prepareChromedriver = function (cb) {
    var chromeArgs = {

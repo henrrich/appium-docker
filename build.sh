@@ -1,7 +1,8 @@
 #!/bin/bash
 appium_version=$1
+tag=$2
 
-echo "APPIUM_VERSION=$appium_version" > version.env
+docker build --build-arg APPIUM_VERSION=$appium_version -t testobject-appium .
 
 docker build -t testobject-appium .
 
