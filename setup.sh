@@ -19,6 +19,10 @@ if [ "$APPIUM_VERSION" == '1.4.16' ]; then
   echo "replacing chromium driver"
   cd /root/appium/appium/$APPIUM_VERSION
   npm install appium-chromedriver@2.5.1
-  patch -p0 < /root/patches/0001-fix-BufferOverflow-by-limiting-output-of-dumpsys.patch;
-  patch -p0 < /root/patches/0002-handover-custom-adb-port-to-chromedriver.patch;
+
+  # fix max buffer exceeded by increasing the buffer to 1MB
+  sed -i -- 's/524288/1048576/g' node_modules/appium-adb/lib/adb.js
+  sed -i -- 's/524288/1048576/g' node_modules/appium-adb/lib/helpers.js
+
+  patch -p0 < /root/patches/0001-handover-custom-adb-port-to-chromedriver.patch;
 fi
